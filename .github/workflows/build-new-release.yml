@@ -18,11 +18,15 @@ jobs:
         run: dotnet restore
       - name: Build
         run: dotnet build --configuration Release --no-restore
+      - name: Publish
+        run: dotnet publish --no-build --runtime win-x64 --output build
+      - name: Test
+        run: ls -l build
       - name: release
         uses: actions/create-release@v1
         id: create_release
         with:
-          release_name: Release ${{ github.ref }}
+          release_name: Release ${{ github.run_id }}
           tag_name: ${{ github.ref }}
         env:
           GITHUB_TOKEN: ${{ github.token }}
