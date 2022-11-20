@@ -1,0 +1,15 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="HelperTools.App"
+             xmlns:local="clr-namespace:HelperTools">
+	<Application.Styles>
+		<FluentTheme Mode="Light" />
+	</Application.Styles>
+	<TrayIcon.Icons>
+		<TrayIcons>
+			<TrayIcon 
+				Icon="/Assets/app-icon.ico" 
+				ToolTipText="Helper Tools"/>
+		</TrayIcons>
+	</TrayIcon.Icons>
+</Application>

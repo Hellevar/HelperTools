@@ -1,0 +1,57 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" Width="600" Height="800"
+        x:Class="HelperTools.Windows.MainWindow"
+        xmlns:w="using:HelperTools.Windows"
+        x:DataType="w:MainWindowViewModel"
+        x:CompileBindings="True"
+        Icon="/Assets/app-icon.ico"
+        Title="HelperTools">
+	<Grid 
+		RowDefinitions="* Auto Auto *"
+		ColumnDefinitions="Auto *">
+		<Button 
+			Grid.Row="0"
+			Grid.Column="0"
+			Content="Open File"
+			Command="{Binding OpenFile}"/>
+		<TextBox
+			Grid.Row="0"
+			Grid.Column="1"
+			Text="{Binding OriginalContent}"
+			ScrollViewer.VerticalScrollBarVisibility="Visible"
+			IsReadOnly="True"/>
+		<Button
+			Grid.Row="1"
+			Grid.Column="0"
+			Content="Modify text"
+			Command="{Binding ModifyText}"/>
+		<StackPanel
+			Grid.Row="1"
+			Grid.Column="1"
+			Orientation="Horizontal">
+			<Label Content="Before line:"/>
+			<TextBox 
+				Text="{Binding AddBefore}"/>
+			<Label Content="After line:"/>
+			<TextBox 
+				Text="{Binding AddAfter}"/>
+		</StackPanel>
+		<Button
+			Grid.Row="2"
+			Grid.Column="0"
+			Content="Reload text"
+			Command="{Binding ReloadText}"/>
+		<Button
+			Grid.Row="3"
+			Grid.Column="0"
+			Content="Save File"
+			Command="{Binding SaveFile}"/>		
+		<TextBox
+			Grid.Row="3"
+			Grid.Column="1"
+			Text="{Binding ModifiedContent}"/>
+	</Grid>
+</Window>
