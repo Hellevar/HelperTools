@@ -19,7 +19,7 @@ jobs:
       - name: Build
         run: dotnet build --configuration Release --no-restore
       - name: Publish
-        run: dotnet publish --no-build --output build
+        run: dotnet publish --output build
       - name: Test
         run: ls -l build
       - name: release
